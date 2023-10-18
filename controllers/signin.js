@@ -23,6 +23,6 @@ const signinRoute = (db, bcrypt) => (req, res) => {
     .catch((err) => res.status(400).json('Wrong credentials'));
 };
 
-module.exports = {
+export default {
   signinRoute,
 };

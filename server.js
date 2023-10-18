@@ -1,14 +1,14 @@
-const express = require('express');
-const bcrypt = require('bcryptjs');
-const cors = require('cors');
-const knex = require('knex');
+import express, { json } from 'express';
+import bcrypt from 'bcryptjs';
+import cors from 'cors';
+import knex from 'knex';
 
-const { registerRoute } = require('./controllers/register');
-const { signinRoute } = require('./controllers/signin');
-const { profileRoute } = require('./controllers/profile');
-const { imageRoute, imageApiRoute } = require('./controllers/image');
-const { usersRoute } = require('./controllers/users');
-const { extractUser } = require('./middleware/userExtractor');
+import { registerRoute } from './controllers/register';
+import { signinRoute } from './controllers/signin';
+import { profileRoute } from './controllers/profile';
+import { imageRoute, imageApiRoute } from './controllers/image';
+import { usersRoute } from './controllers/users';
+import { extractUser } from './middleware/userExtractor';
 
 const db = knex({
   client: 'pg',
@@ -26,7 +26,7 @@ const db = knex({
 const app = express();
 app.use(cors());
 
-app.use(express.json());
+app.use(json());
 
 app.get('/', (req, res) => {
   res.json('App is working.');
