@@ -5,6 +5,4 @@ const usersRoute = (db) => (req, res) => {
     .catch((err) => res.status(400).json('Error getting users'));
 };
 
-export default {
-  usersRoute,
-};
+export { usersRoute };

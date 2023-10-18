@@ -28,6 +28,4 @@ const registerRoute = (db, bcrypt) => (req, res) => {
   }).catch((err) => res.status(400).json('Unable to register'));
 };
 
-export default {
-  registerRoute,
-};
+export { registerRoute };

@@ -55,7 +55,4 @@ const imageRoute = (db) => (req, res) => {
     .catch((err) => res.status(400).json('Unable to get entries'));
 };
 
-export default {
-  imageRoute,
-  imageApiRoute,
-};
+export { imageRoute, imageApiRoute };

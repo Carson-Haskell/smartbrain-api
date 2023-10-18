@@ -4,6 +4,4 @@ const profileRoute = (req, res) => {
   res.json(user);
 };
 
-export default {
-  profileRoute,
-};
+export { profileRoute };
