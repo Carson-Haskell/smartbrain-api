@@ -3,12 +3,12 @@ import bcrypt from 'bcryptjs';
 import cors from 'cors';
 import knex from 'knex';
 
-import { registerRoute } from './controllers/register';
-import { signinRoute } from './controllers/signin';
-import { profileRoute } from './controllers/profile';
-import { imageRoute, imageApiRoute } from './controllers/image';
-import { usersRoute } from './controllers/users';
-import { extractUser } from './middleware/userExtractor';
+import { registerRoute } from './controllers/register.js';
+import { signinRoute } from './controllers/signin.js';
+import { profileRoute } from './controllers/profile.js';
+import { imageRoute, imageApiRoute } from './controllers/image.js';
+import { usersRoute } from './controllers/users.js';
+import { extractUser } from './middleware/userExtractor.js';
 
 const db = knex({
   client: 'pg',
