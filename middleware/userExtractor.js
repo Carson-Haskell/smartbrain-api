@@ -17,6 +17,4 @@ const extractUser = (req, res, db, next) => {
     .catch((err) => res.status(400).json('Error getting user'));
 };
 
-export default {
-  extractUser,
-};
+export { extractUser };
