@@ -6,7 +6,7 @@ const knex = require('knex');
 const { registerRoute } = require('./controllers/register');
 const { signinRoute } = require('./controllers/signin');
 const { profileRoute } = require('./controllers/profile');
-const { imageRoute } = require('./controllers/image');
+const { imageRoute, imageApiRoute } = require('./controllers/image');
 const { usersRoute } = require('./controllers/users');
 const { extractUser } = require('./middleware/userExtractor');
 
@@ -39,5 +39,7 @@ app.post('/register', registerRoute(db, bcrypt));
 app.get('/profile/:id', extractUser, profileRoute);
 
 app.put('/image', imageRoute(db));
+
+app.post('/imageurl', imageApiRoute);
 
 app.listen(3000, () => console.log('✅ --> server running on port 3000 🚀'));
