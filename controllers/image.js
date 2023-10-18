@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 const API_ENDPOINT =
   'https://api.clarifai.com/v2/models/face-detection/outputs';
 
