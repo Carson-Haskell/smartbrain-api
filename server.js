@@ -13,11 +13,12 @@ const { extractUser } = require('./middleware/userExtractor');
 const db = knex({
   client: 'pg',
   connection: {
-    host: '127.0.0.1',
+    connectionString: process.env.DB_URL,
+    host: process.env.DB_HOST,
     port: 5432,
-    user: 'carsonhaskell',
-    password: '',
-    database: 'smart-brain',
+    user: process.env.DB_USER,
+    password: process.env.DB_PS,
+    database: process.env.DB_DB,
   },
 });
 
